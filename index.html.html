@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriel Monteiro — Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F5F4F0;
+    --surface: #FAFAF8;
+    --text: #1A1917;
+    --muted: #6B6A65;
+    --accent: #1A1917;
+    --tag-bg: #E8E7E2;
+    --border: #DEDED8;
+    --white: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(245, 244, 240, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 6vw;
+    padding-top: 60px;
+    gap: 4rem;
+  }
+
+  .hero-text h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text h1 em {
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-dark {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .btn-dark:hover {
+    background: #333;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .btn-outline:hover {
+    background: var(--tag-bg);
+    transform: translateY(-1px);
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar-ring {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .avatar-inner {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: var(--muted);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .badge-float {
+    position: absolute;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .badge-float.top-right { top: 30px; right: -20px; }
+  .badge-float.bottom-left { bottom: 40px; left: -30px; }
+  .badge-float.mid-right { right: -40px; top: 50%; transform: translateY(-50%); }
+
+  /* SECTIONS */
+  section {
+    padding: 7rem 6vw;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 3.5rem;
+  }
+
+  /* SKILLS */
+  .skills-section { background: var(--surface); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5px;
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .skill-card {
+    background: var(--white);
+    padding: 2rem;
+    transition: background 0.2s;
+  }
+
+  .skill-card:hover { background: var(--bg); }
+
+  .skill-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .skill-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .skill-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .skill-level {
+    display: inline-block;
+    margin-top: 0.8rem;
+    background: var(--tag-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+
+  .project-thumb {
+    height: 180px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-thumb-label {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .project-body { padding: 1.5rem; }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .tag {
+    background: var(--tag-bg);
+    color: var(--muted);
+    border-radius: 100px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.1rem;
+    transition: border-color 0.2s;
+  }
+
+  .project-link:hover { border-color: var(--text); }
+
+  /* EDUCATION */
+  .edu-section { background: var(--surface); }
+
+  .edu-list { display: flex; flex-direction: column; gap: 0; }
+
+  .edu-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .edu-item:first-child { border-top: 1px solid var(--border); }
+
+  .edu-year {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 400;
+    padding-top: 0.2rem;
+  }
+
+  .edu-name {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .edu-place {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .edu-badge {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background: var(--tag-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .contact-section .section-label { color: rgba(255,255,255,0.45); }
+  .contact-section .section-title { color: var(--bg); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .contact-item {
+    padding: 1.5rem 2rem;
+    background: rgba(255,255,255,0.04);
+    transition: background 0.2s;
+  }
+
+  .contact-item:hover { background: rgba(255,255,255,0.08); }
+
+  .contact-type {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .contact-val {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--bg);
+    text-decoration: none;
+    word-break: break-all;
+    transition: opacity 0.2s;
+  }
+
+  .contact-val:hover { opacity: 0.7; }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 6vw;
+    background: var(--text);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer span {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 100px;
+      padding-bottom: 4rem;
+      text-align: center;
+    }
+
+    .hero-desc { margin: 0 auto 2.5rem; }
+    .hero-cta { justify-content: center; }
+    .hero-visual { display: none; }
+    .nav-links { display: none; }
+
+    .edu-item { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text h1 { animation: fadeUp 0.7s ease both; }
+  .hero-desc { animation: fadeUp 0.7s 0.15s ease both; }
+  .hero-cta { animation: fadeUp 0.7s 0.25s ease both; }
+  .hero-visual { animation: fadeUp 0.9s 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">GM</a>
+  <ul class="nav-links">
+    <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#formacao">Formação</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-text">
+    <h1>Gabriel<br><em>Monteiro</em><br>da Silva</h1>
+    <p class="hero-desc">
+      Estudante de Ciência da Computação com base sólida em redes e uma curiosidade que não para — sempre aprendendo, sempre construindo.
+    </p>
+    <div class="hero-cta">
+      <a href="#projetos" class="btn btn-dark">Ver projetos</a>
+      <a href="#contato" class="btn btn-outline">Entrar em contato</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="avatar-ring">
+      <div class="avatar-inner">GMS</div>
+      <span class="badge-float top-right">💻 Dev</span>
+      <span class="badge-float bottom-left">🌐 Redes</span>
+      <span class="badge-float mid-right">🎓 CC</span>
+    </div>
+  </div>
+</section>
+
+<!-- HABILIDADES -->
+<section class="skills-section" id="habilidades">
+  <p class="section-label">Competências</p>
+  <h2 class="section-title">Habilidades técnicas</h2>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <span class="skill-icon">🌐</span>
+      <p class="skill-name">HTML & CSS</p>
+      <p class="skill-desc">Criação de sites e interfaces responsivas, com atenção a estrutura e estilo.</p>
+      <span class="skill-level">Intermediário</span>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">🐍</span>
+      <p class="skill-name">Python</p>
+      <p class="skill-desc">Lógica de programação, scripts e automações básicas.</p>
+      <span class="skill-level">Em desenvolvimento</span>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">🔌</span>
+      <p class="skill-name">Redes de Computadores</p>
+      <p class="skill-desc">Projeto, configuração e diagnóstico de infraestruturas de rede — do cabeamento ao roteamento.</p>
+      <span class="skill-level">Avançado</span>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">⚙️</span>
+      <p class="skill-name">n8n</p>
+      <p class="skill-desc">Automações visuais de fluxo de dados e integração entre serviços.</p>
+      <span class="skill-level">Aprendendo</span>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">🐧</span>
+      <p class="skill-name">Linux</p>
+      <p class="skill-desc">Uso do ambiente terminal, permissões, gerenciamento de arquivos e serviços.</p>
+      <span class="skill-level">Intermediário</span>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">🗃️</span>
+      <p class="skill-name">Git & GitHub</p>
+      <p class="skill-desc">Controle de versão, repositórios e publicação de projetos.</p>
+      <span class="skill-level">Básico</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+  <p class="section-label">Portfólio</p>
+  <h2 class="section-title">Projetos reais</h2>
+
+  <div class="projects-grid">
+
+    <!-- Projeto 1 -->
+    <div class="project-card">
+      <div class="project-thumb" style="background: #EEF2F7;">
+        🖥️
+        <span class="project-thumb-label">Site Web</span>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Institucional</span>
+        </div>
+        <h3 class="project-title">NextInfo Tech</h3>
+        <p class="project-desc">
+          Site institucional de uma empresa de tecnologia que oferece serviços de infraestrutura, formatação, criação de sites e suporte técnico. Desenvolvido do zero com foco em apresentação de serviços e contato via WhatsApp.
+        </p>
+        <a href="https://gmonteiro2.github.io/NextInfo/" target="_blank" class="project-link">
+          Ver projeto ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Projeto 2 -->
+    <div class="project-card">
+      <div class="project-thumb" style="background: #F5EEF8;">
+        🛍️
+        <span class="project-thumb-label">E-commerce</span>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">E-commerce</span>
+        </div>
+        <h3 class="project-title">Loja de Roupas Personalizável</h3>
+        <p class="project-desc">
+          Plataforma de compras de roupas com foco na personalização — o usuário pode customizar peças do seu jeito. Uma experiência de compra mais interativa e única.
+        </p>
+        <a href="https://lnkd.in/dKgq-u_m" target="_blank" class="project-link">
+          Ver projeto ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Projeto 3 -->
+    <div class="project-card">
+      <div class="project-thumb" style="background: #EEFAF4;">
+        🔧
+        <span class="project-thumb-label">Projeto de Redes</span>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">Infraestrutura</span>
+          <span class="tag">Cabeamento</span>
+          <span class="tag">Roteamento</span>
+          <span class="tag">SENAI</span>
+        </div>
+        <h3 class="project-title">Infraestrutura de Redes — Do Zero</h3>
+        <p class="project-desc">
+          Projeto final do curso Técnico em Redes. Estrutura de rede projetada e implementada do zero — incluindo cabeamento estruturado, configuração de equipamentos ativos e documentação técnica completa.
+        </p>
+        <a href="https://www.linkedin.com/posts/renato-de-oliveira-paulino_o-sucesso-em-rede-da-teoria-%C3%A0-pr%C3%A1tica-ugcPost-7391282620292120576-sg8c" target="_blank" class="project-link">
+          Ver no LinkedIn ↗
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORMAÇÃO -->
+<section class="edu-section" id="formacao">
+  <p class="section-label">Trajetória</p>
+  <h2 class="section-title">Formação acadêmica</h2>
+
+  <div class="edu-list">
+    <div class="edu-item">
+      <span class="edu-year">2024 – atual</span>
+      <div>
+        <p class="edu-name">Bacharelado em Ciência da Computação</p>
+        <p class="edu-place">4º período em andamento</p>
+        <span class="edu-badge">Em andamento</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <span class="edu-year">Concluído</span>
+      <div>
+        <p class="edu-name">Técnico em Redes de Computadores</p>
+        <p class="edu-place">SENAI</p>
+        <span class="edu-badge">Concluído</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact-section" id="contato">
+  <p class="section-label">Vamos conversar</p>
+  <h2 class="section-title">Entre em contato</h2>
+
+  <div class="contact-grid">
+    <div class="contact-item">
+      <p class="contact-type">E-mail</p>
+      <a href="mailto:Biel9980@gmail.com" class="contact-val">Biel9980@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <p class="contact-type">LinkedIn</p>
+      <a href="https://www.linkedin.com/in/gabriel-monteiro-a074292b5/" target="_blank" class="contact-val">gabriel-monteiro</a>
+    </div>
+    <div class="contact-item">
+      <p class="contact-type">GitHub</p>
+      <a href="https://github.com/GMonteiro2" target="_blank" class="contact-val">GMonteiro2</a>
+    </div>
+    <div class="contact-item">
+      <p class="contact-type">Localização</p>
+      <span class="contact-val" style="cursor: default;">São Gonçalo, RJ — Brasil</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Gabriel Monteiro da Silva</span>
+  <span>Feito com HTML & CSS</span>
+</footer>
+
+</body>
+</html>
