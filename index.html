@@ -18,7 +18,7 @@
             line-height: 1.5;
         }
 
-        /* ===== HEADER FIXO - 100% FUNCIONAL ===== */
+        /* ===== HEADER FIXO - Nome na esquerda, links na direita ===== */
         .header {
             position: fixed;
             top: 0;
@@ -39,11 +39,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
         }
 
+        /* Logo/Título na EXTREMIDADE ESQUERDA */
         .logo {
             flex-shrink: 0;
+            text-align: left;
         }
 
         .logo h1 {
@@ -65,10 +66,12 @@
             margin-top: 2px;
         }
 
+        /* Navegação na EXTREMIDADE DIREITA */
         .nav {
             display: flex;
             gap: 28px;
             align-items: center;
+            flex-shrink: 0;
         }
 
         .nav a {
@@ -84,7 +87,7 @@
             color: #0077b6;
         }
 
-        /* Espaço para o header fixo - essencial */
+        /* Espaço para o header fixo */
         .main-content {
             padding-top: 100px;
         }
@@ -319,33 +322,23 @@
             font-size: 0.85rem;
         }
 
-        /* ===== RESPONSIVIDADE TOTAL ===== */
+        /* ===== RESPONSIVIDADE ===== */
         
-        /* Tablet (até 768px) */
         @media (max-width: 768px) {
             .container-header {
                 padding: 0 20px;
                 flex-direction: column;
-                text-align: center;
                 gap: 12px;
             }
             
-            .logo h1 {
-                font-size: 1.3rem;
-            }
-            
-            .logo p {
-                font-size: 0.7rem;
+            .logo {
+                text-align: center;
             }
             
             .nav {
                 gap: 24px;
                 flex-wrap: wrap;
                 justify-content: center;
-            }
-            
-            .nav a {
-                font-size: 0.95rem;
             }
             
             .main-content {
@@ -385,10 +378,6 @@
                 padding: 20px;
             }
             
-            .skill-card h3 {
-                font-size: 1.3rem;
-            }
-            
             .projects-grid {
                 gap: 22px;
             }
@@ -397,24 +386,11 @@
                 padding: 22px;
             }
             
-            .project-card h3 {
-                font-size: 1.4rem;
-            }
-            
-            .timeline-item {
-                padding: 20px;
-            }
-            
-            .timeline-item h3 {
-                font-size: 1.3rem;
-            }
-            
             .contact-box {
                 padding: 38px 20px;
             }
         }
         
-        /* Celular (até 480px) */
         @media (max-width: 480px) {
             .container-header {
                 padding: 0 16px;
@@ -455,16 +431,11 @@
             
             .hero p {
                 font-size: 0.95rem;
-                padding: 0 8px;
             }
             
             .hero-tag {
                 font-size: 0.75rem;
                 padding: 4px 12px;
-            }
-            
-            .section-title {
-                margin-bottom: 28px;
             }
             
             .skills-grid {
@@ -475,15 +446,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .project-tech {
-                gap: 6px;
-            }
-            
-            .tech-badge {
-                font-size: 0.7rem;
-                padding: 3px 10px;
-            }
-            
             .timeline-item {
                 padding: 16px;
             }
@@ -492,20 +454,11 @@
                 font-size: 1.2rem;
             }
             
-            .timeline-date {
-                font-size: 0.85rem;
-            }
-            
             .contact-box {
                 padding: 30px 16px;
             }
-            
-            .contact-info {
-                font-size: 0.9rem;
-            }
         }
         
-        /* Celular pequeno (até 375px) */
         @media (max-width: 375px) {
             .nav {
                 gap: 12px;
@@ -518,36 +471,15 @@
             .hero-tags {
                 gap: 8px;
             }
-            
-            .hero-tag {
-                font-size: 0.7rem;
-                padding: 3px 10px;
-            }
-            
-            .project-card h3 {
-                font-size: 1.3rem;
-            }
-            
-            .project-desc {
-                font-size: 0.9rem;
-            }
         }
         
-        /* Ajuste para telas muito largas */
-        @media (min-width: 1400px) {
-            .container-header, .container {
-                max-width: 1300px;
-            }
-        }
-        
-        /* Scroll suave para toda a página */
         html {
             scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <!-- HEADER FIXO - Funciona em todas as telas -->
+    <!-- HEADER: Nome na esquerda, links na direita -->
     <div class="header">
         <div class="container-header">
             <div class="logo">
@@ -589,11 +521,10 @@
                 </div>
             </section>
 
-            <!-- Portfolio: Projetos reais -->
+            <!-- Portfólio -->
             <section id="portfolio">
                 <h2 class="section-title">Projetos reais</h2>
                 <div class="projects-grid">
-                    <!-- Autenticador -->
                     <div class="project-card">
                         <div class="project-icon">🔐</div>
                         <h3>Autenticador</h3>
@@ -601,7 +532,6 @@
                         <div class="project-tech"><span class="tech-badge">Node.js</span><span class="tech-badge">Express</span><span class="tech-badge">JWT</span><span class="tech-badge">MySQL</span></div>
                         <a href="https://github.com/GMonteiro2/Autenticador" target="_blank" class="project-link">Ver projeto ↗</a>
                     </div>
-                    <!-- Dashboard Financeiro -->
                     <div class="project-card">
                         <div class="project-icon">💰</div>
                         <h3>Dashboard Financeiro</h3>
@@ -609,7 +539,6 @@
                         <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Plotly</span><span class="tech-badge">Pandas</span></div>
                         <a href="https://github.com/GMonteiro2/Dashboard" target="_blank" class="project-link">Ver projeto ↗</a>
                     </div>
-                    <!-- Currículo X -->
                     <div class="project-card">
                         <div class="project-icon">🎯</div>
                         <h3>Currículo X</h3>
@@ -617,27 +546,24 @@
                         <div class="project-tech"><span class="tech-badge">FastAPI</span><span class="tech-badge">Groq</span><span class="tech-badge">LLaMA 3.3</span><span class="tech-badge">Python</span></div>
                         <a href="https://github.com/GMonteiro2/curriculo-x" target="_blank" class="project-link">Ver projeto ↗</a>
                     </div>
-                    <!-- NextInfo Tech -->
                     <div class="project-card">
                         <div class="project-icon">🖥️</div>
                         <h3>NextInfo Tech</h3>
-                        <div class="project-desc">Site institucional de uma empresa de tecnologia que oferece serviços de infraestrutura, formatação, criação de sites e suporte técnico. Desenvolvido do zero com foco em apresentação de serviços e contato via WhatsApp.</div>
+                        <div class="project-desc">Site institucional de uma empresa de tecnologia que oferece serviços de infraestrutura, formatação, criação de sites e suporte técnico.</div>
                         <div class="project-tech"><span class="tech-badge">HTML/CSS</span><span class="tech-badge">Responsivo</span></div>
                         <a href="#" class="project-link">Ver projeto ↗</a>
                     </div>
-                    <!-- Loja de Roupas -->
                     <div class="project-card">
                         <div class="project-icon">🛍️</div>
                         <h3>Loja de Roupas Personalizável</h3>
-                        <div class="project-desc">Plataforma de compras de roupas com foco na personalização — o usuário pode customizar peças do seu jeito. Uma experiência de compra mais interativa e única.</div>
+                        <div class="project-desc">Plataforma de compras de roupas com foco na personalização — o usuário pode customizar peças do seu jeito.</div>
                         <div class="project-tech"><span class="tech-badge">JavaScript</span><span class="tech-badge">Front-end</span></div>
                         <a href="#" class="project-link">Ver projeto ↗</a>
                     </div>
-                    <!-- Infraestrutura de Redes -->
                     <div class="project-card">
                         <div class="project-icon">🔧</div>
                         <h3>Infraestrutura de Redes — Do Zero</h3>
-                        <div class="project-desc">Projeto final do curso Técnico em Redes. Estrutura de rede projetada e implementada do zero — incluindo cabeamento estruturado, configuração de equipamentos ativos e documentação técnica completa.</div>
+                        <div class="project-desc">Projeto final do curso Técnico em Redes. Estrutura de rede projetada e implementada do zero.</div>
                         <div class="project-tech"><span class="tech-badge">Cisco</span><span class="tech-badge">VLAN</span><span class="tech-badge">Rede</span></div>
                         <a href="#" class="project-link">Ver no LinkedIn ↗</a>
                     </div>
@@ -700,7 +626,6 @@
             });
         });
         
-        // Ajuste para garantir que o header não cubra conteúdo ao carregar com # na URL
         if (window.location.hash) {
             setTimeout(() => {
                 const target = document.querySelector(window.location.hash);
