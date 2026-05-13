@@ -19,21 +19,28 @@
             scroll-behavior: smooth;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* HEADER FIXO - corrigido */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eaeef2;
+            z-index: 1000;
+            padding: 16px 0;
         }
 
-        /* Header - VERSÃO CORRIGIDA (responsiva) */
-        .header {
+        .header .container-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 32px 0;
             flex-wrap: wrap;
             gap: 20px;
-            border-bottom: 1px solid #eaeef2;
         }
 
         .logo {
@@ -41,21 +48,26 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: -0.5px;
             line-height: 1.2;
         }
 
+        .logo h1 span {
+            font-size: 0.9rem;
+            font-weight: normal;
+        }
+
         .logo p {
             color: #5a6874;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 24px;
             justify-content: flex-end;
         }
 
@@ -65,10 +77,22 @@
             font-weight: 500;
             transition: color 0.2s;
             white-space: nowrap;
+            font-size: 0.95rem;
         }
 
         .nav a:hover {
             color: #0077b6;
+        }
+
+        /* Espaço para compensar o header fixo */
+        .main-content {
+            padding-top: 100px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         /* Hero */
@@ -303,25 +327,34 @@
 
         /* BREAKPOINTS ESPECÍFICOS */
         @media (max-width: 768px) {
-            .container {
+            .header .container-header {
                 padding: 0 16px;
-            }
-            
-            .header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                gap: 16px;
-                padding: 24px 0;
+                gap: 12px;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
             }
             
             .nav {
                 justify-content: center;
-                gap: 24px;
+                gap: 20px;
             }
             
             .nav a {
-                font-size: 1rem;
+                font-size: 0.9rem;
+                white-space: nowrap;
+            }
+            
+            .main-content {
+                padding-top: 120px;
+            }
+            
+            .container {
+                padding: 0 16px;
             }
             
             .hero {
@@ -383,21 +416,34 @@
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 0 14px;
+            .header .container-header {
+                padding: 0 12px;
+                gap: 10px;
             }
             
             .logo h1 {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
+            }
+            
+            .logo p {
+                font-size: 0.7rem;
             }
             
             .nav {
-                gap: 18px;
+                gap: 16px;
             }
             
             .nav a {
-                font-size: 0.9rem;
-                white-space: normal;
+                font-size: 0.85rem;
+                white-space: nowrap;
+            }
+            
+            .main-content {
+                padding-top: 115px;
+            }
+            
+            .container {
+                padding: 0 14px;
             }
             
             .hero h2 {
@@ -449,12 +495,11 @@
 
         @media (max-width: 375px) {
             .nav {
-                gap: 14px;
-                flex-wrap: wrap;
+                gap: 12px;
             }
             
             .nav a {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
             }
             
             .hero-tags {
@@ -464,10 +509,11 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
+    <!-- HEADER FIXO -->
+    <div class="header">
+        <div class="container-header">
             <div class="logo">
-                <h1>Gabriel Monteiro<br><span style="font-size: 1rem;">da Silva</span></h1>
+                <h1>Gabriel Monteiro<br><span>da Silva</span></h1>
                 <p>Dev · Redes · CC</p>
             </div>
             <div class="nav">
@@ -477,117 +523,123 @@
                 <a href="#contato">Contato</a>
             </div>
         </div>
-
-        <div class="hero">
-            <h2>Estudante de <span>Ciência da Computação</span><br>com base sólida em redes</h2>
-            <p>Uma curiosidade que não para — sempre aprendendo, sempre construindo.</p>
-            <div class="hero-tags">
-                <span class="hero-tag">💻 Dev</span>
-                <span class="hero-tag">🌐 Redes</span>
-                <span class="hero-tag">🎓 CC</span>
-            </div>
-        </div>
-
-        <!-- Competências -->
-        <section id="competencias">
-            <h2 class="section-title">Habilidades técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><div class="skill-icon">🌐</div><h3>HTML & CSS</h3><p>Criação de sites e interfaces responsivas, com atenção a estrutura e estilo.</p><span class="skill-level">Intermediário</span></div>
-                <div class="skill-card"><div class="skill-icon">🐍</div><h3>Python</h3><p>Lógica de programação, scripts e automações básicas.</p><span class="skill-level">Em desenvolvimento</span></div>
-                <div class="skill-card"><div class="skill-icon">🔌</div><h3>Redes de Computadores</h3><p>Projeto, configuração e diagnóstico de infraestruturas de rede — do cabeamento ao roteamento.</p><span class="skill-level">Avançado</span></div>
-                <div class="skill-card"><div class="skill-icon">⚙️</div><h3>n8n</h3><p>Automações visuais de fluxo de dados e integração entre serviços.</p><span class="skill-level">Aprendendo</span></div>
-                <div class="skill-card"><div class="skill-icon">🐧</div><h3>Linux</h3><p>Uso do ambiente terminal, permissões, gerenciamento de arquivos e serviços.</p><span class="skill-level">Intermediário</span></div>
-                <div class="skill-card"><div class="skill-icon">🗃️</div><h3>Git & GitHub</h3><p>Controle de versão, repositórios e publicação de projetos.</p><span class="skill-level">Básico</span></div>
-            </div>
-        </section>
-
-        <!-- Portfolio: Projetos reais (ATUALIZADO com os 3 novos) -->
-        <section id="portfolio">
-            <h2 class="section-title">Projetos reais</h2>
-            <div class="projects-grid">
-                <!-- NOVO: Autenticador -->
-                <div class="project-card">
-                    <div class="project-icon">🔐</div>
-                    <h3>Autenticador</h3>
-                    <div class="project-desc">Sistema completo de autenticação com cadastro, verificação de email, login via Google, JWT e recuperação de senha. Node.js + Express + MySQL.</div>
-                    <div class="project-tech"><span class="tech-badge">Node.js</span><span class="tech-badge">Express</span><span class="tech-badge">JWT</span><span class="tech-badge">MySQL</span></div>
-                    <a href="https://github.com/GMonteiro2/Autenticador" target="_blank" class="project-link">Ver projeto ↗</a>
-                </div>
-                <!-- NOVO: Dashboard Financeiro -->
-                <div class="project-card">
-                    <div class="project-icon">💰</div>
-                    <h3>Dashboard Financeiro</h3>
-                    <div class="project-desc">Dashboard interativo para controle de finanças pessoais com gráficos dinâmicos, análise de gastos por categoria e indicadores mensais. Python + Streamlit + Plotly.</div>
-                    <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Plotly</span><span class="tech-badge">Pandas</span></div>
-                    <a href="https://github.com/GMonteiro2/Dashboard" target="_blank" class="project-link">Ver projeto ↗</a>
-                </div>
-                <!-- NOVO: Currículo X -->
-                <div class="project-card">
-                    <div class="project-icon">🎯</div>
-                    <h3>Currículo X</h3>
-                    <div class="project-desc">Análise inteligente de currículos com IA (Groq + LLaMA 3.3). Envie texto ou PDF e receba pontos fortes, fracos e nota geral. FastAPI backend.</div>
-                    <div class="project-tech"><span class="tech-badge">FastAPI</span><span class="tech-badge">Groq</span><span class="tech-badge">LLaMA 3.3</span><span class="tech-badge">Python</span></div>
-                    <a href="https://github.com/GMonteiro2/curriculo-x" target="_blank" class="project-link">Ver projeto ↗</a>
-                </div>
-                <!-- Projeto original: NextInfo Tech -->
-                <div class="project-card">
-                    <div class="project-icon">🖥️</div>
-                    <h3>NextInfo Tech</h3>
-                    <div class="project-desc">Site institucional de uma empresa de tecnologia que oferece serviços de infraestrutura, formatação, criação de sites e suporte técnico. Desenvolvido do zero com foco em apresentação de serviços e contato via WhatsApp.</div>
-                    <div class="project-tech"><span class="tech-badge">HTML/CSS</span><span class="tech-badge">Responsivo</span></div>
-                    <a href="#" class="project-link">Ver projeto ↗</a>
-                </div>
-                <!-- Projeto original: Loja de Roupas -->
-                <div class="project-card">
-                    <div class="project-icon">🛍️</div>
-                    <h3>Loja de Roupas Personalizável</h3>
-                    <div class="project-desc">Plataforma de compras de roupas com foco na personalização — o usuário pode customizar peças do seu jeito. Uma experiência de compra mais interativa e única.</div>
-                    <div class="project-tech"><span class="tech-badge">JavaScript</span><span class="tech-badge">Front-end</span></div>
-                    <a href="#" class="project-link">Ver projeto ↗</a>
-                </div>
-                <!-- Projeto original: Infraestrutura de Redes -->
-                <div class="project-card">
-                    <div class="project-icon">🔧</div>
-                    <h3>Infraestrutura de Redes — Do Zero</h3>
-                    <div class="project-desc">Projeto final do curso Técnico em Redes. Estrutura de rede projetada e implementada do zero — incluindo cabeamento estruturado, configuração de equipamentos ativos e documentação técnica completa.</div>
-                    <div class="project-tech"><span class="tech-badge">Cisco</span><span class="tech-badge">VLAN</span><span class="tech-badge">Rede</span></div>
-                    <a href="#" class="project-link">Ver no LinkedIn ↗</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trajetória -->
-        <section id="trajetoria">
-            <h2 class="section-title">Formação acadêmica</h2>
-            <div class="timeline-item">
-                <h3>Bacharelado em Ciência da Computação</h3>
-                <div class="timeline-date">2024 – atual · 4º período em andamento</div>
-                <p>Estudos em algoritmos, estrutura de dados, desenvolvimento de software e inteligência artificial.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Técnico em Redes de Computadores</h3>
-                <div class="timeline-date">SENAI · Concluído</div>
-                <p>Projeto, configuração e manutenção de redes, cabeamento estruturado, switches, roteadores e protocolos.</p>
-            </div>
-        </section>
-
-        <!-- Contato -->
-        <section id="contato">
-            <div class="contact-box">
-                <h2>Vamos conversar</h2>
-                <div class="contact-info">
-                    <p>📍 São Gonçalo, RJ — Brasil</p>
-                    <p>📧 gabriel.monteiro@email.com</p>
-                    <p>🔗 linkedin.com/in/gabriel-monteiro</p>
-                    <p style="margin-top: 16px; font-size: 0.9rem;">💬 Disponível para oportunidades, colaborações e networking.</p>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2026 Gabriel Monteiro da Silva — Sempre construindo</p>
-        </footer>
     </div>
+
+    <!-- CONTEÚDO PRINCIPAL (com padding top para compensar header fixo) -->
+    <div class="main-content">
+        <div class="container">
+            <div class="hero">
+                <h2>Estudante de <span>Ciência da Computação</span><br>com base sólida em redes</h2>
+                <p>Uma curiosidade que não para — sempre aprendendo, sempre construindo.</p>
+                <div class="hero-tags">
+                    <span class="hero-tag">💻 Dev</span>
+                    <span class="hero-tag">🌐 Redes</span>
+                    <span class="hero-tag">🎓 CC</span>
+                </div>
+            </div>
+
+            <!-- Competências -->
+            <section id="competencias">
+                <h2 class="section-title">Habilidades técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-card"><div class="skill-icon">🌐</div><h3>HTML & CSS</h3><p>Criação de sites e interfaces responsivas, com atenção a estrutura e estilo.</p><span class="skill-level">Intermediário</span></div>
+                    <div class="skill-card"><div class="skill-icon">🐍</div><h3>Python</h3><p>Lógica de programação, scripts e automações básicas.</p><span class="skill-level">Em desenvolvimento</span></div>
+                    <div class="skill-card"><div class="skill-icon">🔌</div><h3>Redes de Computadores</h3><p>Projeto, configuração e diagnóstico de infraestruturas de rede — do cabeamento ao roteamento.</p><span class="skill-level">Avançado</span></div>
+                    <div class="skill-card"><div class="skill-icon">⚙️</div><h3>n8n</h3><p>Automações visuais de fluxo de dados e integração entre serviços.</p><span class="skill-level">Aprendendo</span></div>
+                    <div class="skill-card"><div class="skill-icon">🐧</div><h3>Linux</h3><p>Uso do ambiente terminal, permissões, gerenciamento de arquivos e serviços.</p><span class="skill-level">Intermediário</span></div>
+                    <div class="skill-card"><div class="skill-icon">🗃️</div><h3>Git & GitHub</h3><p>Controle de versão, repositórios e publicação de projetos.</p><span class="skill-level">Básico</span></div>
+                </div>
+            </section>
+
+            <!-- Portfolio: Projetos reais (ATUALIZADO com os 3 novos) -->
+            <section id="portfolio">
+                <h2 class="section-title">Projetos reais</h2>
+                <div class="projects-grid">
+                    <!-- NOVO: Autenticador -->
+                    <div class="project-card">
+                        <div class="project-icon">🔐</div>
+                        <h3>Autenticador</h3>
+                        <div class="project-desc">Sistema completo de autenticação com cadastro, verificação de email, login via Google, JWT e recuperação de senha. Node.js + Express + MySQL.</div>
+                        <div class="project-tech"><span class="tech-badge">Node.js</span><span class="tech-badge">Express</span><span class="tech-badge">JWT</span><span class="tech-badge">MySQL</span></div>
+                        <a href="https://github.com/GMonteiro2/Autenticador" target="_blank" class="project-link">Ver projeto ↗</a>
+                    </div>
+                    <!-- NOVO: Dashboard Financeiro -->
+                    <div class="project-card">
+                        <div class="project-icon">💰</div>
+                        <h3>Dashboard Financeiro</h3>
+                        <div class="project-desc">Dashboard interativo para controle de finanças pessoais com gráficos dinâmicos, análise de gastos por categoria e indicadores mensais. Python + Streamlit + Plotly.</div>
+                        <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Plotly</span><span class="tech-badge">Pandas</span></div>
+                        <a href="https://github.com/GMonteiro2/Dashboard" target="_blank" class="project-link">Ver projeto ↗</a>
+                    </div>
+                    <!-- NOVO: Currículo X -->
+                    <div class="project-card">
+                        <div class="project-icon">🎯</div>
+                        <h3>Currículo X</h3>
+                        <div class="project-desc">Análise inteligente de currículos com IA (Groq + LLaMA 3.3). Envie texto ou PDF e receba pontos fortes, fracos e nota geral. FastAPI backend.</div>
+                        <div class="project-tech"><span class="tech-badge">FastAPI</span><span class="tech-badge">Groq</span><span class="tech-badge">LLaMA 3.3</span><span class="tech-badge">Python</span></div>
+                        <a href="https://github.com/GMonteiro2/curriculo-x" target="_blank" class="project-link">Ver projeto ↗</a>
+                    </div>
+                    <!-- Projeto original: NextInfo Tech -->
+                    <div class="project-card">
+                        <div class="project-icon">🖥️</div>
+                        <h3>NextInfo Tech</h3>
+                        <div class="project-desc">Site institucional de uma empresa de tecnologia que oferece serviços de infraestrutura, formatação, criação de sites e suporte técnico. Desenvolvido do zero com foco em apresentação de serviços e contato via WhatsApp.</div>
+                        <div class="project-tech"><span class="tech-badge">HTML/CSS</span><span class="tech-badge">Responsivo</span></div>
+                        <a href="#" class="project-link">Ver projeto ↗</a>
+                    </div>
+                    <!-- Projeto original: Loja de Roupas -->
+                    <div class="project-card">
+                        <div class="project-icon">🛍️</div>
+                        <h3>Loja de Roupas Personalizável</h3>
+                        <div class="project-desc">Plataforma de compras de roupas com foco na personalização — o usuário pode customizar peças do seu jeito. Uma experiência de compra mais interativa e única.</div>
+                        <div class="project-tech"><span class="tech-badge">JavaScript</span><span class="tech-badge">Front-end</span></div>
+                        <a href="#" class="project-link">Ver projeto ↗</a>
+                    </div>
+                    <!-- Projeto original: Infraestrutura de Redes -->
+                    <div class="project-card">
+                        <div class="project-icon">🔧</div>
+                        <h3>Infraestrutura de Redes — Do Zero</h3>
+                        <div class="project-desc">Projeto final do curso Técnico em Redes. Estrutura de rede projetada e implementada do zero — incluindo cabeamento estruturado, configuração de equipamentos ativos e documentação técnica completa.</div>
+                        <div class="project-tech"><span class="tech-badge">Cisco</span><span class="tech-badge">VLAN</span><span class="tech-badge">Rede</span></div>
+                        <a href="#" class="project-link">Ver no LinkedIn ↗</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trajetória -->
+            <section id="trajetoria">
+                <h2 class="section-title">Formação acadêmica</h2>
+                <div class="timeline-item">
+                    <h3>Bacharelado em Ciência da Computação</h3>
+                    <div class="timeline-date">2024 – atual · 4º período em andamento</div>
+                    <p>Estudos em algoritmos, estrutura de dados, desenvolvimento de software e inteligência artificial.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Técnico em Redes de Computadores</h3>
+                    <div class="timeline-date">SENAI · Concluído</div>
+                    <p>Projeto, configuração e manutenção de redes, cabeamento estruturado, switches, roteadores e protocolos.</p>
+                </div>
+            </section>
+
+            <!-- Contato -->
+            <section id="contato">
+                <div class="contact-box">
+                    <h2>Vamos conversar</h2>
+                    <div class="contact-info">
+                        <p>📍 São Gonçalo, RJ — Brasil</p>
+                        <p>📧 gabriel.monteiro@email.com</p>
+                        <p>🔗 linkedin.com/in/gabriel-monteiro</p>
+                        <p style="margin-top: 16px; font-size: 0.9rem;">💬 Disponível para oportunidades, colaborações e networking.</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <p>© 2026 Gabriel Monteiro da Silva — Sempre construindo</p>
+            </footer>
+        </div>
+    </div>
+
     <script>
         // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -597,7 +649,11 @@
                 const target = document.querySelector(targetId);
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const offsetTop = target.offsetTop - 80; // Compensa o header fixo
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
