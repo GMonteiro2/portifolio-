@@ -1,0 +1,184 @@
+/* ============================================
+   NAVBAR — Fixed + Glassmorphism + Mobile Menu
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--navbar-height);
+
+  /* Estado inicial: transparente */
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color var(--transition-base),
+              border-color var(--transition-base),
+              backdrop-filter var(--transition-base);
+}
+
+/* Classe adicionada pelo JS quando o usuário rola a página */
+.navbar--scrolled {
+  background-color: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--color-border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* --- LOGO --- */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+}
+
+.navbar__logo:hover {
+  color: var(--color-accent);
+}
+
+.navbar__logo-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  margin-top: 2px; /* alinhamento visual com a letra */
+}
+
+/* --- NAV LINKS (Desktop) --- */
+.navbar__nav {
+  display: none; /* escondido no mobile */
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.navbar__link {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+/* Linha underline animada no hover */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-base);
+}
+
+.navbar__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* --- HAMBURGER (Mobile) --- */
+.navbar__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-text-primary);
+  transition: transform var(--transition-base),
+              opacity var(--transition-base);
+  transform-origin: center;
+}
+
+/* Animação do X quando menu está aberto */
+.navbar__toggle.is-active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.navbar__toggle.is-active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar__toggle.is-active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* --- MOBILE MENU (drawer) --- */
+.navbar__nav.is-open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  top: var(--navbar-height);
+  background-color: rgba(13, 13, 13, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: menuFadeIn var(--transition-base) ease forwards;
+}
+
+.navbar__nav.is-open .navbar__list {
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.navbar__nav.is-open .navbar__link {
+  font-size: var(--text-2xl);
+  color: var(--color-text-primary);
+}
+
+@keyframes menuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- DESKTOP (>= 1024px) --- */
+@media (min-width: 1024px) {
+  .navbar__nav {
+    display: flex; /* mostra no desktop */
+  }
+
+  .navbar__toggle {
+    display: none; /* esconde hamburguer no desktop */
+  }
+}

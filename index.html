@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gabriel Monteiro — Desenvolvedor Full Stack com foco em Backend. Python, FastAPI, MySQL." />
+  <title>Gabriel Monteiro | Dev Full Stack</title>
+
+  <!-- Fontes (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__logo">
+        <span class="navbar__logo-text">GM</span>
+        <span class="navbar__logo-dot"></span>
+      </a>
+
+      <nav class="navbar__nav" id="navbar-nav" aria-label="Navegação principal">
+        <ul class="navbar__list">
+          <li><a href="#about"    class="navbar__link">Sobre</a></li>
+          <li><a href="#skills"   class="navbar__link">Skills</a></li>
+          <li><a href="#projects" class="navbar__link">Projetos</a></li>
+          <li><a href="#contact"  class="navbar__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="section hero" id="hero">
+      <div class="container hero__inner">
+        <section class="section hero" id="hero">
+  <div class="container hero__inner">
+
+    <div class="hero__content">
+      <span class="hero__eyebrow">
+        <span class="hero__eyebrow-line"></span>
+        Olá, eu sou
+      </span>
+
+      <h1 class="hero__name">Gabriel<br>Monteiro</h1>
+
+      <p class="hero__role">
+        <span class="hero__role-prefix">_</span>Dev Full Stack
+        <span class="hero__cursor">|</span>
+      </p>
+
+      <p class="hero__bio">
+        Construo o que funciona por dentro e impressiona por fora.
+        Backend sólido, interfaces que fazem sentido.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">Ver projetos</a>
+        <a href="#contact"  class="btn btn--ghost">Falar comigo</a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__img-wrapper">
+        <img
+          src="assets/img/profile.jpg"
+          alt="Gabriel Monteiro"
+          class="hero__img"
+          loading="eager"
+        />
+        <div class="hero__img-frame"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll">
+    <span class="hero__scroll-line"></span>
+    <span class="hero__scroll-label">scroll</span>
+  </div>
+</section>
+      </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <span class="accent-line"></span>
+        <span class="section__label">// sobre mim</span>
+        <h2 class="section__title">Quem sou eu?</h2>
+
+      <p class="about__bio">
+        Sou Gabriel Monteiro, estudante do 4º semestre de Ciência da Computação
+        e Técnico em Redes formado pelo SENAI. Essa base em infraestrutura me deu
+        algo que poucos desenvolvedores têm: entender o que acontece
+        <em>antes</em> do código rodar.
+      </p>
+
+      <p class="about__bio">
+        Hoje tenho focado em desenvolvimento Full Stack, com ênfase no backend —
+        construindo a lógica, os dados e as integrações que fazem as aplicações
+        funcionarem de verdade. Já tirei projetos completos do papel, de redes
+        corporativas a sistemas com autenticação, IA e análise de dados.
+      </p>
+
+      <p class="about__bio">
+        Estou em busca da minha primeira oportunidade para aplicar esse
+        conhecimento em um ambiente real e continuar crescendo.
+      </p>
+
+      <div class="about__meta">
+        <div class="about__meta-item">
+          <span class="about__meta-label">Formação</span>
+          <span class="about__meta-value">Ciência da Computação · 4º sem.</span>
+        </div>
+        <div class="about__meta-item">
+          <span class="about__meta-label">Técnico</span>
+          <span class="about__meta-value">Redes · SENAI</span>
+        </div>
+        <div class="about__meta-item">
+          <span class="about__meta-label">Localização</span>
+          <span class="about__meta-value">São Gonçalo, RJ</span>
+        </div>
+        <div class="about__meta-item">
+          <span class="about__meta-label">Status</span>
+          <span class="about__meta-value about__meta-value--available">
+            <span class="about__status-dot"></span>
+            Disponível para oportunidades
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+        <span class="accent-line"></span>
+        <span class="section__label">// hard skills</span>
+        <h2 class="section__title">Tecnologias que uso:</h2>
+       
+     <div class="terminal">
+      <div class="terminal__header">
+        <span class="terminal__dot terminal__dot--red"></span>
+        <span class="terminal__dot terminal__dot--yellow"></span>
+        <span class="terminal__dot terminal__dot--green"></span>
+        <span class="terminal__title">gabriel@portfolio:~$ skills --list</span>
+      </div>
+
+      <div class="terminal__body">
+
+        <div class="terminal__group">
+          <span class="terminal__category">Backend</span>
+          <div class="terminal__skills">
+            <span class="terminal__skill">Python</span>
+            <span class="terminal__skill">Node.js</span>
+            <span class="terminal__skill">FastAPI</span>
+            <span class="terminal__skill">Express</span>
+          </div>
+        </div>
+
+        <div class="terminal__group">
+          <span class="terminal__category">Banco de Dados</span>
+          <div class="terminal__skills">
+            <span class="terminal__skill">MySQL</span>
+          </div>
+        </div>
+
+        <div class="terminal__group">
+          <span class="terminal__category">Segurança</span>
+          <div class="terminal__skills">
+            <span class="terminal__skill">JWT</span>
+            <span class="terminal__skill">OAuth 2.0</span>
+            <span class="terminal__skill">Bcrypt</span>
+          </div>
+        </div>
+
+        <div class="terminal__group">
+          <span class="terminal__category">Dados & IA</span>
+          <div class="terminal__skills">
+            <span class="terminal__skill">Pandas</span>
+            <span class="terminal__skill">Plotly</span>
+            <span class="terminal__skill">Streamlit</span>
+            <span class="terminal__skill">Groq · LLaMA</span>
+          </div>
+        </div>
+
+        <div class="terminal__group">
+          <span class="terminal__category">Frontend</span>
+          <div class="terminal__skills">
+            <span class="terminal__skill">HTML</span>
+            <span class="terminal__skill">CSS</span>
+            <span class="terminal__skill">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="terminal__group">
+          <span class="terminal__category">Infra & Ferramentas</span>
+          <div class="terminal__skills">
+            <span class="terminal__skill">Git</span>
+            <span class="terminal__skill">GitHub</span>
+            <span class="terminal__skill">TCP/IP</span>
+            <span class="terminal__skill">Roteamento</span>
+          </div>
+        </div>
+
+        <div class="terminal__prompt">
+          <span class="terminal__prompt-symbol">▶</span>
+          <span class="terminal__prompt-text">em constante aprendizado...</span>
+          <span class="terminal__cursor">_</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+      </div>
+    </section>
+
+    <!-- ========== PROJETOS ========== -->
+<section class="section projects" id="projects">
+  <div class="container">
+    <span class="accent-line"></span>
+    <span class="section__label">// projetos</span>
+    <h2 class="section__title">Projetos realizados:</h2>
+
+    <div class="projects__grid">
+
+      <!-- Card 1: Autenticador -->
+      <article class="project-card project-card--featured">
+        <div class="project-card__img-wrapper">
+          <img
+            src="assets/img/projects/Autenticador.png"
+            alt="Sistema de Autenticação"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay"></div>
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__header">
+            <span class="project-card__number">01</span>
+            <div class="project-card__links">
+              <a href="https://lnkd.in/dRTXsafn" target="_blank" rel="noopener" class="project-card__link" aria-label="Ver no GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Sistema de Autenticação</h3>
+          <p class="project-card__desc">
+            Autenticação completa do zero — cadastro com senha criptografada,
+            verificação por e-mail, login com JWT, recuperação de senha e
+            OAuth 2.0 com Google. Rotas protegidas com middleware.
+          </p>
+          <div class="project-card__tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">JWT</span>
+            <span class="tag">OAuth 2.0</span>
+            <span class="tag">Bcrypt</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Dashboard Financeiro -->
+      <article class="project-card">
+        <div class="project-card__img-wrapper">
+          <img
+            src="assets/img/projects/Dashboard.png"
+            alt="Dashboard Financeiro"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay"></div>
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__header">
+            <span class="project-card__number">02</span>
+            <div class="project-card__links">
+              <a href="https://lnkd.in/gv245zzq" target="_blank" rel="noopener" class="project-card__link" aria-label="Ver no GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Dashboard Financeiro</h3>
+          <p class="project-card__desc">
+            Ferramenta pessoal de controle financeiro com gráficos interativos
+            por categoria e mês, resumo inteligente automático, histórico
+            comparativo e lançamento de gastos em tempo real.
+          </p>
+          <div class="project-card__tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">Streamlit</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Currículo X -->
+      <article class="project-card">
+        <div class="project-card__img-wrapper">
+          <img
+            src="assets/img/projects/Curriculo-x.png"
+            alt="Currículo X"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay"></div>
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__header">
+            <span class="project-card__number">03</span>
+            <div class="project-card__links">
+              <a href="https://lnkd.in/dBhgVD7z" target="_blank" rel="noopener" class="project-card__link" aria-label="Ver no GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Currículo X</h3>
+          <p class="project-card__desc">
+            Analisador de currículos com IA — faz upload do PDF e recebe
+            uma análise detalhada gerada por LLaMA via Groq. Backend em
+            FastAPI com integração direta à API de linguagem.
+          </p>
+          <div class="project-card__tags">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Groq</span>
+            <span class="tag">LLaMA</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <!-- ========== CONTATO ========== -->
+<section class="section contact" id="contact">
+  <div class="container contact__inner">
+
+    <div class="contact__text">
+      <span class="accent-line"></span>
+      <span class="section__label">// contato</span>
+      <h2 class="section__title">Vamos conversar</h2>
+      <p class="contact__desc">
+        Estou em busca da minha primeira oportunidade no mercado de TI.
+        Se você tem uma vaga, um projeto ou só quer trocar uma ideia —
+        minha caixa de entrada está aberta.
+      </p>
+    </div>
+
+    <div class="contact__links">
+
+      <a href="mailto:nextinfo207@gmail.com" class="contact-item">
+        <div class="contact-item__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="contact-item__info">
+          <span class="contact-item__label">E-mail</span>
+          <span class="contact-item__value">Biel9980@gmail.com</span>
+        </div>
+        <svg class="contact-item__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/in/gabriel-monteiro-a074292b5/" target="_blank" rel="noopener" class="contact-item">
+        <div class="contact-item__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </div>
+        <div class="contact-item__info">
+          <span class="contact-item__label">LinkedIn</span>
+          <span class="contact-item__value">Gabriel Monteiro</span>
+        </div>
+        <svg class="contact-item__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+      <a href="https://github.com/GMonteiro2" target="_blank" rel="noopener" class="contact-item">
+        <div class="contact-item__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </div>
+        <div class="contact-item__info">
+          <span class="contact-item__label">GitHub</span>
+          <span class="contact-item__value">GMonteiro2</span>
+        </div>
+        <svg class="contact-item__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+      <a href="https://wa.me/5521984609804" target="_blank" rel="noopener" class="contact-item">
+        <div class="contact-item__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="contact-item__info">
+          <span class="contact-item__label">WhatsApp</span>
+          <span class="contact-item__value">(21) 98460-9804</span>
+        </div>
+        <svg class="contact-item__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+    </div>
+  </div>
+</section>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+  <div class="container footer__inner">
+    <span class="footer__logo">GM<span class="footer__dot">.</span></span>
+    <p class="footer__text">
+      © 2025 Gabriel Monteiro · Feito com foco e muita curiosidade.
+    </p>
+    <p class="footer__stack">
+      HTML · CSS · JS
+    </p>
+  </div>
+</footer>
+
+  <!-- JS -->
+  <script src="js/main.js" type="module"></script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* ============================================
+   GRID & CONTAINERS
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --container-pad: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-pad: var(--space-12);
+    --text-5xl: 3.75rem;
+    --text-6xl: 5rem;
+  }
+}

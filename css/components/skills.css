@@ -1,0 +1,128 @@
+/* ============================================
+   SKILLS — Terminal style
+   ============================================ */
+
+.terminal {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  max-width: 720px;
+}
+
+/* --- HEADER DA JANELA --- */
+.terminal__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.terminal__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.terminal__dot--red    { background-color: #FF5F57; }
+.terminal__dot--yellow { background-color: #FFBD2E; }
+.terminal__dot--green  { background-color: #28C840; }
+
+.terminal__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-left: var(--space-2);
+}
+
+/* --- CORPO DO TERMINAL --- */
+.terminal__body {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* --- GRUPO DE CATEGORIA --- */
+.terminal__group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .terminal__group {
+    grid-template-columns: 160px 1fr;
+    align-items: start;
+    gap: var(--space-4);
+  }
+}
+
+.terminal__category {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+/* Adiciona "→" antes da categoria */
+.terminal__category::before {
+  content: '→ ';
+  color: var(--color-text-secondary);
+}
+
+.terminal__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.terminal__skill {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  background-color: rgba(200, 146, 58, 0.08);
+  border: 1px solid rgba(200, 146, 58, 0.2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.terminal__skill:hover {
+  background-color: rgba(200, 146, 58, 0.15);
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
+}
+
+/* --- PROMPT FINAL --- */
+.terminal__prompt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.terminal__prompt-symbol {
+  color: var(--color-accent);
+}
+
+.terminal__prompt-text {
+  color: var(--color-text-secondary);
+}
+
+.terminal__cursor {
+  color: var(--color-accent);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

@@ -1,0 +1,72 @@
+/* ============================================
+   ABOUT
+   ============================================ */
+
+.about__inner {
+  max-width: 720px;
+}
+
+.about__bio {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.9;
+  margin-bottom: var(--space-6);
+}
+
+.about__bio em {
+  color: var(--color-accent);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* --- META INFO --- */
+.about__meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6) var(--space-8);
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.about__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.about__meta-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about__meta-value {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.about__meta-value--available {
+  color: #6ee7b7; /* verde suave */
+}
+
+/* Bolinha pulsante de "disponível" */
+.about__status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #6ee7b7;
+  animation: pulse 2s ease infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(110, 231, 183, 0.4); }
+  50%       { opacity: 0.8; box-shadow: 0 0 0 6px rgba(110, 231, 183, 0); }
+}

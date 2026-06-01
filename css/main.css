@@ -1,0 +1,44 @@
+/* ============================================
+   MAIN.CSS — Ponto de entrada do CSS
+   Ordem importa: base → layout → componentes
+   ============================================ */
+
+/* Base */
+@import './base/reset.css';
+@import './base/variables.css';
+
+/* Layout */
+@import './layout/grid.css';
+@import './layout/sections.css';
+
+/* Componentes */
+@import './components/navbar.css';
+@import './components/hero.css';
+@import './components/about.css';
+@import './components/skills.css';
+@import './components/projects.css';
+@import './components/contact.css';
+
+/* ============================================
+   ESTILOS GLOBAIS DO BODY
+   ============================================ */
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
+
+  /* Grain cinematográfico sutil no background */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Linha âmbar decorativa — o "fio condutor" do layout */
+.accent-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin-bottom: var(--space-6);
+}
